@@ -14,7 +14,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import com.up.features.entities.Feature;
+import com.up.features.entity.Feature;
 import com.up.features.sourcer.Parser;
 
 import lombok.RequiredArgsConstructor;

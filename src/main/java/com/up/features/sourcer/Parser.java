@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
-import com.up.features.entities.Feature;
+import com.up.features.entity.Feature;
 
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;
@@ -42,7 +42,7 @@ public class Parser {
 	public List<Feature> importData(URL sourceFile) throws IOException {
 		DocumentContext jsonContext = JsonPath.parse(sourceFile);
 		JSONArray featuresJson = jsonContext.read(FEATURE_PATH);
-		log.debug("Read features, sample: {}", featuresJson.get(0));
+		log.trace("Read features, sample: {}", featuresJson.get(0));
 		return objectMapper.readerForListOf(Feature.class).readValue(featuresJson.toJSONString());
 	}
 }

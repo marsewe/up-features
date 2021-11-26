@@ -1,5 +1,11 @@
 
+logging:
+  level:
+    com.up: DEBUG
+
 up:
   features:
     source-file: source-data-sample.json
+
+
 

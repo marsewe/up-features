@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.up.features.entities.Feature;
+import com.up.features.entity.Feature;
 
 /**
  * Deserialize a feature into our Feature entity
@@ -33,7 +33,7 @@ public class FeatureDeserializer extends StdDeserializer<Feature> {
 		JsonNode acquisition = properties.get("acquisition");
 		Long beginViewingDate = acquisition.get("beginViewingDate").asLong();
 		Long endViewingDate = acquisition.get("endViewingDate").asLong();
-		String missionName = acquisition.get("mission").asText();
+		String missionName = acquisition.get("missionName").asText();
 		Feature.FeatureBuilder featureBuilder = Feature.builder()
 				.id(id)
 				.timestamp(timestamp)

@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.up.features.entities.Feature;
+import com.up.features.entity.Feature;
 
 public class ParserTest {
 
@@ -35,7 +35,7 @@ public class ParserTest {
 		assertEquals(1554831167697l, feature1.getTimestamp());
 		assertEquals(1554831167697l, feature1.getBeginViewingDate());
 		assertEquals(1554831202043l, feature1.getEndViewingDate());
-		assertEquals("Sentinel-1", feature1.getMissionName());
+		assertEquals("Sentinel-1B", feature1.getMissionName());
 		assertNotNull(feature1.getQuicklook());
 		assertNotNull(feature2.getQuicklook());
 		assertNull(feature3.getQuicklook());

@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.up.features.entities.Feature;
+import com.up.features.entity.Feature;
 
 @SpringBootTest
 public class FeatureRepositoryTest {

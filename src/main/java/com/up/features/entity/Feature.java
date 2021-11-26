@@ -1,4 +1,7 @@
-package com.up.features.entities;
+package com.up.features.entity;
+
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -7,29 +10,35 @@ import lombok.Data;
 
 @Builder
 @Data
+@JsonIgnoreProperties(value={ "quicklook" }, allowSetters = true)
 public class Feature {
 
+	@NonNull
 	private String id;
 	/**
 	 * Timestamp in ms precision
 	 */
+	@NonNull
 	private Long timestamp;
 
 	/**
 	 * Timestamp in ms precision
 	 */
+	@NonNull
 	private Long beginViewingDate;
 
 	/**
 	 * Timestamp in ms precision
 	 */
+	@NonNull
 	private Long endViewingDate;
 
+	@NonNull
 	private String missionName;
 
 	/**
 	 * Preview image, to be ignored during serialization.
 	 */
-	@JsonIgnoreProperties(allowSetters = true)
+	@Nullable
 	private byte[] quicklook;
 }
