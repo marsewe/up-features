@@ -9,12 +9,15 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
 import com.up.features.entities.Feature;
 import com.up.features.sourcer.Parser;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -22,18 +25,24 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Repository
+@RequiredArgsConstructor
 public class FeatureRepositoryMap implements FeatureRepository {
+
+	@Value("${up.features.source-file}")
+	private String sourceFile;
+
+	private final Parser parser;
 
 	/**
 	 * key: feature-id, value: feature-entity.
 	 */
 	private Map<String, Feature> featureMap = new HashMap<>();
 
-	@Autowired
-	public FeatureRepositoryMap(Parser parser) {
+	@PostConstruct
+	public void init() {
 		ClassLoader classLoader = getClass().getClassLoader();
 		try {
-			List<Feature> features = parser.importData(classLoader.getResource("source-data.json"));
+			List<Feature> features = parser.importData(classLoader.getResource(sourceFile));
 			this.featureMap = features
 					.stream()
 					.collect(Collectors.toMap(Feature::getId, Function.identity()));
