@@ -34,14 +34,16 @@ public class FeatureDeserializer extends StdDeserializer<Feature> {
 		Long beginViewingDate = acquisition.get("beginViewingDate").asLong();
 		Long endViewingDate = acquisition.get("endViewingDate").asLong();
 		String missionName = acquisition.get("mission").asText();
-		byte[] quickLook = Base64.getDecoder().decode(properties.get("quicklook").asText());
-		return Feature.builder()
+		Feature.FeatureBuilder featureBuilder = Feature.builder()
 				.id(id)
 				.timestamp(timestamp)
 				.missionName(missionName)
 				.beginViewingDate(beginViewingDate)
-				.endViewingDate(endViewingDate)
-				.quicklook(quickLook)
-				.build();
+				.endViewingDate(endViewingDate);
+		if(properties.get("state").get("resources").get("quicklook").asBoolean(false)) {
+			byte[] quickLook = Base64.getDecoder().decode(properties.get("quicklook").asText());
+			featureBuilder.quicklook(quickLook);
+		}
+		return featureBuilder.build();
 	}
 }
