@@ -1,4 +1,4 @@
-package com.up.features.repository;
+package com.up.features.domain.repository;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -14,8 +14,8 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import com.up.features.entity.Feature;
-import com.up.features.sourcer.Parser;
+import com.up.features.domain.entity.Feature;
+import com.up.features.domain.sourcer.Parser;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

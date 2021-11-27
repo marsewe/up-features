@@ -1,4 +1,4 @@
-package com.up.features.controller;
+package com.up.features.domain.controller;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.http.MediaType.IMAGE_PNG;

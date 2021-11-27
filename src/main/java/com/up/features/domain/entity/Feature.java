@@ -1,4 +1,4 @@
-package com.up.features.entity;
+package com.up.features.domain.entity;
 
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;

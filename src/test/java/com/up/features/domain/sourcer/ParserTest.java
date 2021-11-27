@@ -1,4 +1,4 @@
-package com.up.features.sourcer;
+package com.up.features.domain.sourcer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.up.features.entity.Feature;
+import com.up.features.domain.entity.Feature;
 
 public class ParserTest {
 

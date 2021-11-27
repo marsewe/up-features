@@ -1,4 +1,4 @@
-package com.up.features.sourcer;
+package com.up.features.domain.sourcer;
 
 import java.io.IOException;
 import java.util.Base64;
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.up.features.entity.Feature;
+import com.up.features.domain.entity.Feature;
 
 /**
  * Deserialize a feature into our Feature entity

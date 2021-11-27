@@ -1,4 +1,4 @@
-package com.up.features.sourcer;
+package com.up.features.domain.sourcer;
 
 import java.io.IOException;
 import java.net.URL;
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
-import com.up.features.entity.Feature;
+import com.up.features.domain.entity.Feature;
 
 import lombok.extern.slf4j.Slf4j;
 import net.minidev.json.JSONArray;
