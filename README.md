@@ -3,7 +3,7 @@ Sample API for some features
 
 ## How to
 - build and run:
-```docker build -t up-features . && docker run -it up-features```
+```docker build -t up-features . && docker run -it -p 8080:8080 up-features```
 - explore and test:
 test UI available at http://localhost:8080/swagger-ui/
 OpenApi docs at http://localhost:8080/v3/api-docs .
